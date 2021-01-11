@@ -19,7 +19,7 @@ const Students = (props) => {
     return (
         <div>
             {levlequals3.map(studentltem => {
-               return <p>{studentltem}</p>
+               return <p>{studentltem.name}</p>
             })}
         name:     <input value={name} onChange={(e) => setName(e.target.value)} />
         age :     <input value={age} onChange={(e) => setAge(e.target.value)} />
