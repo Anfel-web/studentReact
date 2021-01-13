@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import StudentsList from "../components/StudentsList";
+import StudentsLevel3 from "./StudentsLevel3";
 const Students = (props) => {
      const [name, setName] = useState("");
     const [age, setAge] = useState();
@@ -18,9 +19,8 @@ const Students = (props) => {
     console.log("levlequals3",levlequals3)
     return (
         <div>
-            {levlequals3.map(studentltem => {
-               return <p>{studentltem}</p>
-            })}
+            
+            
         name:     <input value={name} onChange={(e) => setName(e.target.value)} />
         age :     <input value={age} onChange={(e) => setAge(e.target.value)} />
         ville :   <input value={ville} onChange={(e) => setVille(e.target.value)} />
@@ -39,6 +39,7 @@ const Students = (props) => {
                 }}>add student</button>
             </div>gi
 <StudentsList students={students} deleteStudent={deleteStudent} />
+<StudentsLevel3 levlequals3={levlequals3} />
 </div>
     )
 };
