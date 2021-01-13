@@ -19,8 +19,7 @@ const Students = (props) => {
     console.log("levlequals3",levlequals3)
     return (
         <div>
-            
-            
+           
         name:     <input value={name} onChange={(e) => setName(e.target.value)} />
         age :     <input value={age} onChange={(e) => setAge(e.target.value)} />
         ville :   <input value={ville} onChange={(e) => setVille(e.target.value)} />
@@ -37,7 +36,7 @@ const Students = (props) => {
                     const newPerson = { name, age, ville, moyenne, adress, specialty, level };
                     setStudents([...students, newPerson])
                 }}>add student</button>
-            </div>gi
+            </div>
 <StudentsList students={students} deleteStudent={deleteStudent} />
 <StudentsLevel3 levlequals3={levlequals3} />
 </div>
