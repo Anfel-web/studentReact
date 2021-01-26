@@ -2,19 +2,17 @@ import React, { useState } from "react";
 
 
 const StudentsLevel3 = (props) => {
-    const [isStudentsLevel3, isSetStudentsLevel3] = useState(false);
+    const [isDisplayStudents, setIsDisplayStudents] = useState(false);
     return (
         <div>
             <button onClick={() => {
-
-                isSetStudentsLevel3(true)
-
-
+                setIsDisplayStudents(!isDisplayStudents)
             }
+            }>afficher la lise de étudiant de 3émme année</button>
+            {isDisplayStudents && <div> 
+                <p>la liste des étudiant de 3émme année: {props.studentsWithLevel3.length}</p>
 
-            }>list level 3</button>
-
-            {isStudentsLevel3 === true && <div> {props.levlequals3.map((studentltem) => <div style={{ display: 'flex', gap: "12px" }}>
+                {props.studentsWithLevel3.length === 0 ? <p>liste vide </p> : props.studentsWithLevel3.map((studentltem) => <div style={{ display: 'flex', gap: "12px" }}>
                 <p>{studentltem.name}</p>
             </div>
 
@@ -22,7 +20,6 @@ const StudentsLevel3 = (props) => {
 
             </div>
             }
-            <p>student level 3</p>
         </div>
 
 

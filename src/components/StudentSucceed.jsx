@@ -1,22 +1,26 @@
-import React  from "react";
+import React, { useState } from "react";
 
 
-const StudentSucceed = (props) => {
-    
+
+const StudentsSucceed = (props) => {
+    const [isDisplayStudents, setIsDisplayStudents] = useState(false);
+
     return (
         <div>
-           
-
-             {props.studentsMoySupA10.map((studentsSucceedMoy10) => <div style={{ display: 'flex', gap: "12px" }}>
-                <p>{studentsSucceedMoy10.name}</p>
-                </div>
-            )
-
+            <button onClick={() => {
+                setIsDisplayStudents(!isDisplayStudents)
             }
-            <p>Students Moy sup 10 and specialty telecom</p>
-             </div>
+            }>afficher la liste des étudiants admis</button>
+            {isDisplayStudents && <div>
+                <p>la list des étudiants admis : {props.studentsAdmis.length}</p>
+                {props.studentsAdmis.length === 0 ? <p>liste vide </p> : props.studentsAdmis.map((student) => <div style={{ display: 'flex', gap: "12px" }}>
+                <p>{student.name}</p>
+            </div>
+            )}
+            </div>
+            }
+        </div>
+    )
+}
 
-       
-         )
-        }
-export default StudentSucceed;
+export default StudentsSucceed;
