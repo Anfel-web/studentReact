@@ -28,7 +28,7 @@ const Students = (props) => {
 
     return (
         <div>
-
+         <p>STUDENTS APPLICATION</p>
             name:     <input value={name} onChange={(e) => setName(e.target.value)} />
         age :     <input value={age} onChange={(e) => setAge(Number(e.target.value))} />
         ville :   <input value={ville} onChange={(e) => setVille(e.target.value)} />
