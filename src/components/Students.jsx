@@ -7,6 +7,7 @@ import StudentSucceed from '../components/StudentSucceed';
 import studentsWithStatus from '../functions/studentsWithStatus';
 
 const Students = (props) => {
+    console.log("test branch")
     const [name, setName] = useState("");
     const [age, setAge] = useState(0);
     const [ville, setVille] = useState("");
@@ -28,7 +29,7 @@ const Students = (props) => {
 
     return (
         <div>
-
+         <p>STUDENTS APPLICATION</p>
             name:     <input value={name} onChange={(e) => setName(e.target.value)} />
         age :     <input value={age} onChange={(e) => setAge(Number(e.target.value))} />
         ville :   <input value={ville} onChange={(e) => setVille(e.target.value)} />
