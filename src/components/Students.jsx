@@ -6,7 +6,7 @@ import TelecomStudentsSucceed from '../components/TelecomStudentsSucceed';
 import StudentSucceed from '../components/StudentSucceed';
 import studentsWithStatus from '../functions/studentsWithStatus';
 import StudentsAgeBetween25And30 from "./StudentsAgeBetween25And30";
-
+import MultimédiaRéseauStudents from "../components/MultimédiaRéseauStudents";
 const Students = (props) => {
     const [name, setName] = useState("");
     const [age, setAge] = useState(0);
@@ -16,7 +16,6 @@ const Students = (props) => {
     const [specialty, setSpecialty] = useState("");
     const [level, setLevel] = useState(1);
     const [students, setStudents] = useState([]);
-
     const deleteStudent = (studentElement) => {
         const studentDelete = students.filter(obj => obj.name !== studentElement.name)
         setStudents(studentDelete)
@@ -27,7 +26,7 @@ const Students = (props) => {
     const telecomStudentsAdmis = students.filter((studentltem) => studentltem.moyenne >= 10 && studentltem.specialty === "telecom");
     const studentsAgeBetween25And30 = students.filter((studentltem) => studentltem.age >= 25 && studentltem.age < 30);
     const listStudentsWithStatus = studentsWithStatus(students);
-
+    const studentsMultimédiaOrRéseau = students.filter((studentltem) => studentltem.specialty === "multimedia" || studentltem.specialty === "reseau")
     return (
         <div>
             <p>STUDENTS APPLICATION</p>
@@ -61,6 +60,7 @@ const Students = (props) => {
             <StudentSucceed studentsAdmis={studentsAdmis} />
             <TelecomStudentsSucceed telecomStudentsAdmis={telecomStudentsAdmis} />
             <StudentsAgeBetween25And30 studentsAgeBetween25And30={studentsAgeBetween25And30} />
+            <MultimédiaRéseauStudents studentsMultimédiaOrRéseau={studentsMultimédiaOrRéseau} />
         </div >
     )
 };
