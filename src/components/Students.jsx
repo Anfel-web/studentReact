@@ -25,13 +25,13 @@ const Students = (props) => {
     const studentsAdmis = students.filter((studentltem) => studentltem.moyenne >= 10);
     const telecomStudentsLevel1 = students.filter((studentltem) => studentltem.level === 1 && studentltem.specialty === "telecom");
     const telecomStudentsAdmis = students.filter((studentltem) => studentltem.moyenne >= 10 && studentltem.specialty === "telecom");
-    const studentsAge= students.filter((studentltem) => studentltem.age >= 25 && studentltem.age < 30 );
+    const studentsAgeBetween25And30 = students.filter((studentltem) => studentltem.age >= 25 && studentltem.age < 30);
     const listStudentsWithStatus = studentsWithStatus(students);
 
     return (
         <div>
-         <p>STUDENTS APPLICATION</p>
-         <p>formulaire</p>
+            <p>STUDENTS APPLICATION</p>
+            <p>formulaire</p>
             name:     <input value={name} onChange={(e) => setName(e.target.value)} />
         age :     <input value={age} onChange={(e) => setAge(Number(e.target.value))} />
         ville :   <input value={ville} onChange={(e) => setVille(e.target.value)} />
@@ -60,7 +60,7 @@ const Students = (props) => {
             <TelecomStudentsLevel1 telecomStudentsLevel1={telecomStudentsLevel1} />
             <StudentSucceed studentsAdmis={studentsAdmis} />
             <TelecomStudentsSucceed telecomStudentsAdmis={telecomStudentsAdmis} />
-            <StudentsAgeBetween25And30  studentsAge={ studentsAge} />
+            <StudentsAgeBetween25And30 studentsAgeBetween25And30={studentsAgeBetween25And30} />
         </div >
     )
 };
