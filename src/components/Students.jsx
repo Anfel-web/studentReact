@@ -5,6 +5,7 @@ import StudentsLevel3 from '../components/StudentsLevel3';
 import TelecomStudentsSucceed from '../components/TelecomStudentsSucceed';
 import StudentSucceed from '../components/StudentSucceed';
 import studentsWithStatus from '../functions/studentsWithStatus';
+import StudentsAgeBetween25And30 from "./StudentsAgeBetween25And30";
 
 const Students = (props) => {
     const [name, setName] = useState("");
@@ -24,6 +25,7 @@ const Students = (props) => {
     const studentsAdmis = students.filter((studentltem) => studentltem.moyenne >= 10);
     const telecomStudentsLevel1 = students.filter((studentltem) => studentltem.level === 1 && studentltem.specialty === "telecom");
     const telecomStudentsAdmis = students.filter((studentltem) => studentltem.moyenne >= 10 && studentltem.specialty === "telecom");
+    const studentsAge= students.filter((studentltem) => studentltem.age >= 25 && studentltem.age < 30 );
     const listStudentsWithStatus = studentsWithStatus(students);
 
     return (
@@ -58,6 +60,7 @@ const Students = (props) => {
             <TelecomStudentsLevel1 telecomStudentsLevel1={telecomStudentsLevel1} />
             <StudentSucceed studentsAdmis={studentsAdmis} />
             <TelecomStudentsSucceed telecomStudentsAdmis={telecomStudentsAdmis} />
+            <StudentsAgeBetween25And30  studentsAge={ studentsAge} />
         </div >
     )
 };
