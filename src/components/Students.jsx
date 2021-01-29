@@ -7,6 +7,7 @@ import StudentSucceed from '../components/StudentSucceed';
 import studentsWithStatus from '../functions/studentsWithStatus';
 import StudentsAgeBetween25And30 from "./StudentsAgeBetween25And30";
 import MultimédiaRéseauStudents from "../components/MultimédiaRéseauStudents";
+import AnnualRateOfStudents from "./AnuualRateOfStudents";
 const Students = (props) => {
     const [name, setName] = useState("");
     const [age, setAge] = useState(0);
@@ -27,6 +28,7 @@ const Students = (props) => {
     const studentsAgeBetween25And30 = students.filter((studentltem) => studentltem.age >= 25 && studentltem.age < 30);
     const listStudentsWithStatus = studentsWithStatus(students);
     const studentsMultimédiaOrRéseau = students.filter((studentltem) => studentltem.specialty === "multimedia" || studentltem.specialty === "reseau")
+    const addTotal = students.reduce((total, currentValue) => total + currentValue, 0)
     return (
         <div>
             <p>STUDENTS APPLICATION</p>
@@ -61,6 +63,7 @@ const Students = (props) => {
             <TelecomStudentsSucceed telecomStudentsAdmis={telecomStudentsAdmis} />
             <StudentsAgeBetween25And30 studentsAgeBetween25And30={studentsAgeBetween25And30} />
             <MultimédiaRéseauStudents studentsMultimédiaOrRéseau={studentsMultimédiaOrRéseau} />
+            <AnnualRateOfStudents addTotal={addTotal} />
         </div >
     )
 };
