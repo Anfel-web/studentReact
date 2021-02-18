@@ -28,7 +28,7 @@ const Students = (props) => {
     const studentsAgeBetween25And30 = students.filter((studentltem) => studentltem.age >= 25 && studentltem.age < 30);
     const listStudentsWithStatus = studentsWithStatus(students);
     const studentsMultimédiaOrRéseau = students.filter((studentltem) => studentltem.specialty === "multimedia" || studentltem.specialty === "reseau")
-    const sommeMoy = students.reduce( (moy, studentItem) => moy + studentItem.moyenne);
+    const sommeMoy = students.reduce( (moy, studentItem) => moy + studentItem.moyenne, 0);
     const moy = sommeMoy / students.length
 
     return (
