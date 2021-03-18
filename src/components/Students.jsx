@@ -7,6 +7,7 @@ import StudentSucceed from '../components/StudentSucceed';
 import studentsWithStatus from '../functions/studentsWithStatus';
 import StudentsAgeBetween25And30 from "./StudentsAgeBetween25And30";
 import MultimédiaRéseauStudents from "../components/MultimédiaRéseauStudents";
+
 const Students = (props) => {
     const [name, setName] = useState("");
     const [age, setAge] = useState(0);
@@ -27,6 +28,9 @@ const Students = (props) => {
     const studentsAgeBetween25And30 = students.filter((studentltem) => studentltem.age >= 25 && studentltem.age < 30);
     const listStudentsWithStatus = studentsWithStatus(students);
     const studentsMultimédiaOrRéseau = students.filter((studentltem) => studentltem.specialty === "multimedia" || studentltem.specialty === "reseau")
+    const sommeMoy = students.reduce( (moy, studentItem) => moy + studentItem.moyenne, 0);
+    const moy = sommeMoy / students.length
+
     return (
         <div>
             <p>STUDENTS APPLICATION</p>
@@ -61,6 +65,7 @@ const Students = (props) => {
             <TelecomStudentsSucceed telecomStudentsAdmis={telecomStudentsAdmis} />
             <StudentsAgeBetween25And30 studentsAgeBetween25And30={studentsAgeBetween25And30} />
             <MultimédiaRéseauStudents studentsMultimédiaOrRéseau={studentsMultimédiaOrRéseau} />
+             <p>Moyenne : {moy}</p>
         </div >
     )
 };
