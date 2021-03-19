@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-
-
 const StudentsSucceed = (props) => {
     const [isDisplayStudents, setIsDisplayStudents] = useState(false);
 
