@@ -70,5 +70,5 @@ console.log("moy",moy);
             <p>Moyenne  : {moy}</p>
         </div >
     )
-};
+}
 export default Students;
