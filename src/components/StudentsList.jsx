@@ -1,21 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 
 const StudentsList = (props) => {
+    const [selectedStudent, setSelectedStudent] = useState("");
+
     return (
         <div>
             <p> la liste de tous les étudiants : {props.listStudentsWithStatus.length}</p>
-            {props.listStudentsWithStatus.length === 0 ? <p>liste vide </p> : props.listStudentsWithStatus.map((students) => <div style={{ display: 'flex', gap: "12px" }}>
-                <p>{students.name}</p>
-                <p>{students.age}</p>
-                <p> {students.ville}</p>
-                <p>{students.moyenne}</p>
-                <p>{students.adress}</p>
-                <p>{students.specialty}</p>
-                <p>{students.level}</p>
-                <p>{students.status}</p>
-                <button onClick={() => {
-                    { props.deleteStudent(students) }
-                }}>delete students</button>
+            {props.listStudentsWithStatus.length === 0 ? <p>liste vide </p> : props.listStudentsWithStatus.map((student) => <div style={{ display: 'flex', gap: "12px" }}>
+                <p>{student.name}</p>
+                <p>{student.age}</p>
+                <p> {student.ville}</p>
+                <p>{student.moyenne}</p>
+                <p>{student.adress}</p>
+                <p>{student.specialty}</p>
+                <p>{student.level}</p>
+                <p>{student.status}</p>
+                <button 
+                onClick={() => {
+                    { props.deleteStudent(student) }
+                }}
+                onMouseEnter={() => {
+                        setSelectedStudent(student.name)
+                }}
+                onMouseLeave={() => setSelectedStudent("")}
+                >{selectedStudent === student.name ? "cliquer pour supprimé" : "delete student"}</button>
             </div>
             )
             }

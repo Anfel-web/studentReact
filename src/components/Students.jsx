@@ -10,6 +10,7 @@ import MultimédiaRéseauStudents from "../components/MultimédiaRéseauStudents
 
 
 const Students = (props) => {
+    const [buttonAddTitle, setButtonAddTitle] = useState("add student");
     const [name, setName] = useState("");
     const [age, setAge] = useState(0);
     const [ville, setVille] = useState("");
@@ -55,9 +56,15 @@ console.log("moy",moy);
 
             <div>
                 <button onClick={() => {
+                    
                     const newPerson = { name, age, ville, moyenne, adress, specialty, level };
                     setStudents([...students, newPerson])
-                }}>add student</button>
+                }}
+                onMouseEnter={() => setButtonAddTitle
+                ("cliquer pour ajouter")}
+                onMouseLeave={() => setButtonAddTitle("add student")}
+                >{buttonAddTitle}</button>
+                
             </div>
 
             <StudentsList listStudentsWithStatus={listStudentsWithStatus} deleteStudent={deleteStudent} />
