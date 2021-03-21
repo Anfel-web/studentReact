@@ -8,7 +8,9 @@ import studentsWithStatus from '../functions/studentsWithStatus';
 import StudentsAgeBetween25And30 from "./StudentsAgeBetween25And30";
 import MultimédiaRéseauStudents from "../components/MultimédiaRéseauStudents";
 
+
 const Students = (props) => {
+    const [buttonAddTitle, setButtonAddTitle] = useState("add student");
     const [name, setName] = useState("");
     const [age, setAge] = useState(0);
     const [ville, setVille] = useState("");
@@ -28,8 +30,9 @@ const Students = (props) => {
     const studentsAgeBetween25And30 = students.filter((studentltem) => studentltem.age >= 25 && studentltem.age < 30);
     const listStudentsWithStatus = studentsWithStatus(students);
     const studentsMultimédiaOrRéseau = students.filter((studentltem) => studentltem.specialty === "multimedia" || studentltem.specialty === "reseau")
-    const sommeMoy = students.reduce( (moy, studentItem) => moy + studentItem.moyenne, 0);
+    const sommeMoy = students.reduce((moy, studentItem) => moy + studentItem.moyenne,0);
     const moy = sommeMoy / students.length
+console.log("moy",moy);
 
     return (
         <div>
@@ -53,9 +56,15 @@ const Students = (props) => {
 
             <div>
                 <button onClick={() => {
+                    
                     const newPerson = { name, age, ville, moyenne, adress, specialty, level };
                     setStudents([...students, newPerson])
-                }}>add student</button>
+                }}
+                onMouseEnter={() => setButtonAddTitle
+                ("cliquer pour ajouter")}
+                onMouseLeave={() => setButtonAddTitle("add student")}
+                >{buttonAddTitle}</button>
+                
             </div>
 
             <StudentsList listStudentsWithStatus={listStudentsWithStatus} deleteStudent={deleteStudent} />
@@ -65,8 +74,8 @@ const Students = (props) => {
             <TelecomStudentsSucceed telecomStudentsAdmis={telecomStudentsAdmis} />
             <StudentsAgeBetween25And30 studentsAgeBetween25And30={studentsAgeBetween25And30} />
             <MultimédiaRéseauStudents studentsMultimédiaOrRéseau={studentsMultimédiaOrRéseau} />
-             <p>Moyenne : {moy}</p>
+            <p>Moyenne  : {moy}</p>
         </div >
     )
-};
+}
 export default Students;
