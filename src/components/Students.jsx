@@ -7,7 +7,7 @@ import StudentSucceed from '../components/StudentSucceed';
 import studentsWithStatus from '../functions/studentsWithStatus';
 import StudentsAgeBetween25And30 from "./StudentsAgeBetween25And30";
 import MultimédiaRéseauStudents from "../components/MultimédiaRéseauStudents";
-
+import EmploiDuTemps from "../components/EmploiDuTemps";
 
 const Students = (props) => {
     const [buttonAddTitle, setButtonAddTitle] = useState("add student");
@@ -75,6 +75,7 @@ console.log("moy",moy);
             <StudentsAgeBetween25And30 studentsAgeBetween25And30={studentsAgeBetween25And30} />
             <MultimédiaRéseauStudents studentsMultimédiaOrRéseau={studentsMultimédiaOrRéseau} />
             <p>Moyenne  : {moy}</p>
+            <EmploiDuTemps/>
         </div >
     )
 }
