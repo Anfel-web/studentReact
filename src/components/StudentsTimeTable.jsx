@@ -2,7 +2,9 @@ import React, { useState } from "react"
 import workingHoursCondition from "../functions/workingHoursCondition";
 const StudentsTimeTable = () => {
     const [hours, setHours] = useState(0);
-const label=workingHoursCondition(hours);
+    const [isMax, setIsMax] = useState(false);
+    const [isMin, setIsMin] = useState(false);
+    const label = workingHoursCondition(hours, isMax, isMin);
     return (
         <div>
             <button
@@ -11,15 +13,25 @@ const label=workingHoursCondition(hours);
                     // condition 
                     if (hours < 6) {
                         setHours(precHours => precHours + 1)
+                        setIsMin(false)
+                    } else {
+                        setIsMax(true)
                     }
                 }}>ajouter une heure</button>
             <p>ta travaillé {hours}h</p>
             <p>il reste {6 - hours}h du travail</p>
             <button onClick={() => {
-                // condition 
-                setHours(precHours => precHours - 1)
+
+                if (hours > 0) {
+                    setHours(precHours => precHours - 1)
+                    if (hours === 6) {
+                        setIsMax(false)
+                    }
+                } else {
+                    setIsMin(true)
+                }
             }}>supprimer une heure</button>
-            <p>workingHoursCondition égale:{label} </p>
+            <p>{label}</p>
         </div>
     );
 }
