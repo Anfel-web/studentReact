@@ -24,7 +24,8 @@ const StudentsList = (props) => {
                         setSelectedStudent(student.name)
                 }}
                 onMouseLeave={() => setSelectedStudent("")}
-                >{selectedStudent === student.name ? "cliquer pour supprimé" : "delete student"}</button>
+                >
+                    {selectedStudent === student.name ? "cliquer pour supprimé" : "delete student"}</button>
             </div>
             )
             }
