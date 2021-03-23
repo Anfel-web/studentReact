@@ -7,7 +7,7 @@ import StudentSucceed from '../components/StudentSucceed';
 import studentsWithStatus from '../functions/studentsWithStatus';
 import StudentsAgeBetween25And30 from "./StudentsAgeBetween25And30";
 import MultimédiaRéseauStudents from "../components/MultimédiaRéseauStudents";
-import EmploiDuTemps from "../components/EmploiDuTemps";
+import StudentsTimeTable from "../components/StudentsTimeTable";
 
 const Students = (props) => {
     const [buttonAddTitle, setButtonAddTitle] = useState("add student");
@@ -27,7 +27,7 @@ const Students = (props) => {
     const studentsAdmis = students.filter((studentltem) => studentltem.moyenne >= 10);
     const telecomStudentsLevel1 = students.filter((studentltem) => studentltem.level === 1 && studentltem.specialty === "telecom");
     const telecomStudentsAdmis = students.filter((studentltem) => studentltem.moyenne >= 10 && studentltem.specialty === "telecom");
-    const studentsAgeBetween25And30 = students.filter((studentltem) => studentltem.age >= 25 && studentltem.age < 30);
+    const studentsAgeBetween25And30 = students.filter((studentltem) => studentltem.age > 25 && studentltem.age < 30);
     const listStudentsWithStatus = studentsWithStatus(students);
     const studentsMultimédiaOrRéseau = students.filter((studentltem) => studentltem.specialty === "multimedia" || studentltem.specialty === "reseau")
     const sommeMoy = students.reduce((moy, studentItem) => moy + studentItem.moyenne,0);
@@ -75,7 +75,7 @@ console.log("moy",moy);
             <StudentsAgeBetween25And30 studentsAgeBetween25And30={studentsAgeBetween25And30} />
             <MultimédiaRéseauStudents studentsMultimédiaOrRéseau={studentsMultimédiaOrRéseau} />
             <p>Moyenne  : {moy}</p>
-            <EmploiDuTemps/>
+<StudentsTimeTable/>
         </div >
     )
 }
