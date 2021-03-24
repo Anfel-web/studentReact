@@ -30,9 +30,9 @@ const Students = (props) => {
     const studentsAgeBetween25And30 = students.filter((studentltem) => studentltem.age > 25 && studentltem.age < 30);
     const listStudentsWithStatus = studentsWithStatus(students);
     const studentsMultimédiaOrRéseau = students.filter((studentltem) => studentltem.specialty === "multimedia" || studentltem.specialty === "reseau")
-    const sommeMoy = students.reduce((moy, studentItem) => moy + studentItem.moyenne,0);
+    const sommeMoy = students.reduce((moy, studentItem) => moy + studentItem.moyenne, 0);
     const moy = sommeMoy / students.length
-console.log("moy",moy);
+    console.log("moy", moy);
 
     return (
         <div>
@@ -56,15 +56,15 @@ console.log("moy",moy);
 
             <div>
                 <button onClick={() => {
-                    
+
                     const newPerson = { name, age, ville, moyenne, adress, specialty, level };
                     setStudents([...students, newPerson])
                 }}
-                onMouseEnter={() => setButtonAddTitle
-                ("cliquer pour ajouter")}
-                onMouseLeave={() => setButtonAddTitle("add student")}
+                    onMouseEnter={() => setButtonAddTitle
+                        ("cliquer pour ajouter")}
+                    onMouseLeave={() => setButtonAddTitle("add student")}
                 >{buttonAddTitle}</button>
-                
+
             </div>
 
             <StudentsList listStudentsWithStatus={listStudentsWithStatus} deleteStudent={deleteStudent} />
@@ -75,7 +75,7 @@ console.log("moy",moy);
             <StudentsAgeBetween25And30 studentsAgeBetween25And30={studentsAgeBetween25And30} />
             <MultimédiaRéseauStudents studentsMultimédiaOrRéseau={studentsMultimédiaOrRéseau} />
             <p>Moyenne  : {moy}</p>
-<StudentsTimeTable/>
+            <StudentsTimeTable />
         </div >
     )
 }
