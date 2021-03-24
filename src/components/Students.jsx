@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import StudentsList from '../components/StudentsList';
-import TelecomStudentsLevel1 from '../components/TelecomStudentsLevel1';
-import StudentsLevel3 from '../components/StudentsLevel3';
-import TelecomStudentsSucceed from '../components/TelecomStudentsSucceed';
-import StudentSucceed from '../components/StudentSucceed';
 import studentsWithStatus from '../functions/studentsWithStatus';
-import StudentsAgeBetween25And30 from "./StudentsAgeBetween25And30";
-import MultimédiaRéseauStudents from "../components/MultimédiaRéseauStudents";
 import StudentsTimeTable from "../components/StudentsTimeTable";
+import GenericList from "./GenericList";
 
 const Students = (props) => {
     const [buttonAddTitle, setButtonAddTitle] = useState("add student");
@@ -56,7 +51,6 @@ const Students = (props) => {
 
             <div>
                 <button onClick={() => {
-
                     const newPerson = { name, age, ville, moyenne, adress, specialty, level };
                     setStudents([...students, newPerson])
                 }}
@@ -64,16 +58,14 @@ const Students = (props) => {
                         ("cliquer pour ajouter")}
                     onMouseLeave={() => setButtonAddTitle("add student")}
                 >{buttonAddTitle}</button>
-
             </div>
-
             <StudentsList listStudentsWithStatus={listStudentsWithStatus} deleteStudent={deleteStudent} />
-            <StudentsLevel3 studentsWithLevel3={studentsWithLevel3} />
-            <TelecomStudentsLevel1 telecomStudentsLevel1={telecomStudentsLevel1} />
-            <StudentSucceed studentsAdmis={studentsAdmis} />
-            <TelecomStudentsSucceed telecomStudentsAdmis={telecomStudentsAdmis} />
-            <StudentsAgeBetween25And30 studentsAgeBetween25And30={studentsAgeBetween25And30} />
-            <MultimédiaRéseauStudents studentsMultimédiaOrRéseau={studentsMultimédiaOrRéseau} />
+            <GenericList students={telecomStudentsLevel1} label="la liste des étudiants 1er année telecom:" />
+            <GenericList students={studentsAdmis} label="la list des étudiants admis" />
+            <GenericList students={studentsWithLevel3}  label="la liste des étudiant de 3émme année" />
+            <GenericList students={telecomStudentsAdmis}  label="la liste des étudiants telecom admis" />
+            <GenericList students={studentsAgeBetween25And30}  label="studentsAgeBetween25And30" />
+            <GenericList students={studentsMultimédiaOrRéseau}  label="studentsMultimédiaOrRéseau" />
             <p>Moyenne  : {moy}</p>
             <StudentsTimeTable />
         </div >

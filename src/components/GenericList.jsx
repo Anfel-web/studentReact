@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 
 
-const StudentsSucceed = (props) => {
+const GenericList = (props) => {
     const [isDisplayStudents, setIsDisplayStudents] = useState(false);
 
     return (
@@ -10,10 +10,10 @@ const StudentsSucceed = (props) => {
             <button onClick={() => {
                 setIsDisplayStudents(!isDisplayStudents)
             }
-            }>afficher la liste des étudiants admis</button>
+            }>afficher {props.label}</button>
             {isDisplayStudents && <div>
-                <p>la list des étudiants admis : {props.studentsAdmis.length}</p>
-                {props.studentsAdmis.length === 0 ? <p>liste vide </p> : props.studentsAdmis.map((student) => <div style={{ display: 'flex', gap: "12px" }}>
+                <p>{props.label} {props.students.length}</p>
+                {props.students.length === 0 ? <p>liste vide </p> : props.students.map((student) => <div style={{ display: 'flex', gap: "12px" }}>
                 <p>{student.name}</p>
             </div>
             )}
@@ -23,4 +23,4 @@ const StudentsSucceed = (props) => {
     )
 }
 
-export default StudentsSucceed;
+export default GenericList;
