@@ -11,7 +11,7 @@ const StudentsList = (props) => {
             {props.listStudentsWithStatus.length === 0 ? <p>liste vide </p> : props.listStudentsWithStatus.map((student) => <div style={{ display: 'flex', gap: "12px" }}>
                 <div onMouseEnter={() =>
                     setselectedList
-                    ("les informations des etudiants")}
+                    (student.name)}
                     onMouseLeave={() => setselectedList("")}>
 
                 <p>{student.name}</p>
