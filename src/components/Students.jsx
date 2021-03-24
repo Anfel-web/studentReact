@@ -68,7 +68,11 @@ const Students = (props) => {
             <GenericList students={studentsMultimédiaOrRéseau}  label="studentsMultimédiaOrRéseau" />
             <p>Moyenne  : {moy}</p>
             <StudentsTimeTable />
+            
         </div >
     )
 }
 export default Students;
+
+// composant generic button
+// afficher le composant generic button deux mara taffichi add client w mara taffichi remove client
