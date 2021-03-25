@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-
-
-
 const GenericList = (props) => {
     const [isDisplayStudents, setIsDisplayStudents] = useState(false);
-
     return (
         <div>
             <button onClick={() => {
@@ -14,13 +10,12 @@ const GenericList = (props) => {
             {isDisplayStudents && <div>
                 <p>{props.label} {props.students.length}</p>
                 {props.students.length === 0 ? <p>liste vide </p> : props.students.map((student) => <div style={{ display: 'flex', gap: "12px" }}>
-                <p>{student.name}</p>
-            </div>
-            )}
+                    <p>{student.name}</p>
+                </div>
+                )}
             </div>
             }
         </div>
     )
 }
-
 export default GenericList;

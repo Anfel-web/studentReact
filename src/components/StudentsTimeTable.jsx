@@ -10,7 +10,6 @@ const StudentsTimeTable = () => {
             <button
                 onClick=
                 {() => {
-                    // condition 
                     if (hours < 6) {
                         setHours(precHours => precHours + 1)
                         setIsMin(false)
@@ -37,7 +36,3 @@ const StudentsTimeTable = () => {
 }
 export default StudentsTimeTable;
 
-// si hours === 0 cliquer sur le button afficher "il faut cliquer sur button ajouter une heure"
-// metnajmich tna9is e9el men 0 w metnajmich tzid akther men 6
-// ki tzid akther men 6 taffichi "tu peut ajouter 6maximum"
-// ki tzid tna9Ed akther men 0 taffichi "tu peut supprimer maximum 0" 

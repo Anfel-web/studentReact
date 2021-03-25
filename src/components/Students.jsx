@@ -3,8 +3,9 @@ import StudentsList from '../components/StudentsList';
 import studentsWithStatus from '../functions/studentsWithStatus';
 import StudentsTimeTable from "../components/StudentsTimeTable";
 import GenericList from "./GenericList";
+import GenericButton from "./GenericButton";
 
-const Students = (props) => {
+const Students = () => {
     const [buttonAddTitle, setButtonAddTitle] = useState("add student");
     const [name, setName] = useState("");
     const [age, setAge] = useState(0);
@@ -62,13 +63,16 @@ const Students = (props) => {
             <StudentsList listStudentsWithStatus={listStudentsWithStatus} deleteStudent={deleteStudent} />
             <GenericList students={telecomStudentsLevel1} label="la liste des étudiants 1er année telecom:" />
             <GenericList students={studentsAdmis} label="la list des étudiants admis" />
-            <GenericList students={studentsWithLevel3}  label="la liste des étudiant de 3émme année" />
-            <GenericList students={telecomStudentsAdmis}  label="la liste des étudiants telecom admis" />
-            <GenericList students={studentsAgeBetween25And30}  label="studentsAgeBetween25And30" />
-            <GenericList students={studentsMultimédiaOrRéseau}  label="studentsMultimédiaOrRéseau" />
+            <GenericList students={studentsWithLevel3} label="la liste des étudiant de 3émme année" />
+            <GenericList students={telecomStudentsAdmis} label="la liste des étudiants telecom admis" />
+            <GenericList students={studentsAgeBetween25And30} label="studentsAgeBetween25And30" />
+            <GenericList students={studentsMultimédiaOrRéseau} label="studentsMultimédiaOrRéseau" />
             <p>Moyenne  : {moy}</p>
             <StudentsTimeTable />
+            <GenericButton label="add client" />
+            <GenericButton label="remove client" />
         </div >
     )
 }
 export default Students;
+
