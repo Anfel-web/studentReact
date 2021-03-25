@@ -1,9 +1,9 @@
 import React from "react";
 const GenericButton = (props) => {
   return (
-    <div>
-      <button >{props.label}</button>
-    </div>
+
+    <button >{props.label}</button>
+
   )
 }
 export default GenericButton;

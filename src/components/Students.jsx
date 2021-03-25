@@ -5,7 +5,7 @@ import StudentsTimeTable from "../components/StudentsTimeTable";
 import GenericList from "./GenericList";
 import GenericButton from "./GenericButton";
 
-const Students = (props) => {
+const Students = () => {
     const [buttonAddTitle, setButtonAddTitle] = useState("add student");
     const [name, setName] = useState("");
     const [age, setAge] = useState(0);
@@ -76,5 +76,3 @@ const Students = (props) => {
 }
 export default Students;
 
-// composant generic button
-// afficher le composant generic button deux mara taffichi add client w mara taffichi remove client
