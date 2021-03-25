@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import StudentsList from '../components/StudentsList';
 import studentsWithStatus from '../functions/studentsWithStatus';
+<<<<<<< HEAD
 import StudentsTimeTable from "../components/StudentsTimeTable";
 import GenericList from "./GenericList";
 import GenericButton from "./GenericButton";
+=======
+import StudentsAgeBetween25And30 from "./StudentsAgeBetween25And30";
+import MultimédiaRéseauStudents from "../components/MultimédiaRéseauStudents";
+
+>>>>>>> 820732a... students
 
 const Students = () => {
     const [buttonAddTitle, setButtonAddTitle] = useState("add student");
@@ -26,9 +32,15 @@ const Students = () => {
     const studentsAgeBetween25And30 = students.filter((studentltem) => studentltem.age > 25 && studentltem.age < 30);
     const listStudentsWithStatus = studentsWithStatus(students);
     const studentsMultimédiaOrRéseau = students.filter((studentltem) => studentltem.specialty === "multimedia" || studentltem.specialty === "reseau")
+<<<<<<< HEAD
     const sommeMoy = students.reduce((moy, studentItem) => moy + studentItem.moyenne, 0);
     const moy = sommeMoy / students.length
     console.log("moy", moy);
+=======
+    const sommeMoy = students.reduce((moy, studentItem) => moy + studentItem.moyenne,0);
+    const moy = sommeMoy / students.length
+console.log("moy",moy);
+>>>>>>> 820732a... students
 
     return (
         <div>
@@ -61,6 +73,7 @@ const Students = () => {
                 >{buttonAddTitle}</button>
             </div>
             <StudentsList listStudentsWithStatus={listStudentsWithStatus} deleteStudent={deleteStudent} />
+<<<<<<< HEAD
             <GenericList students={telecomStudentsLevel1} label="la liste des étudiants 1er année telecom:" />
             <GenericList students={studentsAdmis} label="la list des étudiants admis" />
             <GenericList students={studentsWithLevel3} label="la liste des étudiant de 3émme année" />
@@ -71,6 +84,15 @@ const Students = () => {
             <StudentsTimeTable />
             <GenericButton label="add client" />
             <GenericButton label="remove client" />
+=======
+            <StudentsLevel3 studentsWithLevel3={studentsWithLevel3} />
+            <TelecomStudentsLevel1 telecomStudentsLevel1={telecomStudentsLevel1} />
+            <StudentSucceed studentsAdmis={studentsAdmis} />
+            <TelecomStudentsSucceed telecomStudentsAdmis={telecomStudentsAdmis} />
+            <StudentsAgeBetween25And30 studentsAgeBetween25And30={studentsAgeBetween25And30} />
+            <MultimédiaRéseauStudents studentsMultimédiaOrRéseau={studentsMultimédiaOrRéseau} />
+            <p>Moyenne  : {moy}</p>
+>>>>>>> 820732a... students
         </div >
     )
 }

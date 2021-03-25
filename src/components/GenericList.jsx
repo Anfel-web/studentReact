@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 
+<<<<<<< HEAD:src/components/GenericList.jsx
 
 
 const GenericList = (props) => {
+=======
+const StudentsSucceed = (props) => {
+>>>>>>> 820732a... students:src/components/StudentSucceed.jsx
     const [isDisplayStudents, setIsDisplayStudents] = useState(false);
 
     return (
