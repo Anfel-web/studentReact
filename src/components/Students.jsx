@@ -15,6 +15,7 @@ const Students = () => {
     const [specialty, setSpecialty] = useState("");
     const [level, setLevel] = useState(1);
     const [students, setStudents] = useState([]);
+const [title, setTitle]= useState('')
     const deleteStudent = (studentElement) => {
         const studentDelete = students.filter(obj => obj.name !== studentElement.name)
         setStudents(studentDelete)
@@ -60,6 +61,7 @@ const Students = () => {
                     onMouseLeave={() => setButtonAddTitle("add student")}
                 >{buttonAddTitle}</button>
             </div>
+            {title}
             <StudentsList listStudentsWithStatus={listStudentsWithStatus} deleteStudent={deleteStudent} />
             <GenericList students={telecomStudentsLevel1} label="la liste des étudiants 1er année telecom:" />
             <GenericList students={studentsAdmis} label="la list des étudiants admis" />
@@ -69,8 +71,8 @@ const Students = () => {
             <GenericList students={studentsMultimédiaOrRéseau} label="studentsMultimédiaOrRéseau" />
             <p>Moyenne  : {moy}</p>
             <StudentsTimeTable />
-            <GenericButton label="add client" />
-            <GenericButton label="remove client" />
+            <GenericButton label="add client" setTitle={setTitle} />
+            <GenericButton label="remove client" setTitle={setTitle} />
         </div >
     )
 }
