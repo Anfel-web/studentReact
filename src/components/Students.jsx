@@ -4,6 +4,7 @@ import studentsWithStatus from '../functions/studentsWithStatus';
 import StudentsTimeTable from "../components/StudentsTimeTable";
 import GenericList from "./GenericList";
 import GenericButton from "./GenericButton";
+import GenericTitle from "./GenericTitle";
 
 const Students = () => {
     const [buttonAddTitle, setButtonAddTitle] = useState("add student");
@@ -16,6 +17,7 @@ const Students = () => {
     const [level, setLevel] = useState(1);
     const [students, setStudents] = useState([]);
     const [title, setTitle] = useState('')
+    const [button, setButton] = useState("");
     const deleteStudent = (studentElement) => {
         const studentDelete = students.filter(obj => obj.name !== studentElement.name)
         setStudents(studentDelete)
@@ -73,7 +75,9 @@ const Students = () => {
             <StudentsTimeTable />
             <GenericButton label="add client" setTitle={setTitle} />
             <GenericButton label="remove client" setTitle={setTitle} />
-            
+            <GenericTitle label="saber" setButton={setButton} />
+            <GenericTitle label="anfel" setButton={setButton} />
+            {button}
         </div >
     )
 }
