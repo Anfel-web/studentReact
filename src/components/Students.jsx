@@ -15,7 +15,7 @@ const Students = () => {
     const [specialty, setSpecialty] = useState("");
     const [level, setLevel] = useState(1);
     const [students, setStudents] = useState([]);
-const [title, setTitle]= useState('')
+    const [title, setTitle] = useState('')
     const deleteStudent = (studentElement) => {
         const studentDelete = students.filter(obj => obj.name !== studentElement.name)
         setStudents(studentDelete)
@@ -73,6 +73,7 @@ const [title, setTitle]= useState('')
             <StudentsTimeTable />
             <GenericButton label="add client" setTitle={setTitle} />
             <GenericButton label="remove client" setTitle={setTitle} />
+            
         </div >
     )
 }

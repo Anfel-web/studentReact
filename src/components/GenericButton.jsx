@@ -19,3 +19,8 @@ const GenericButton = (props) => {
 }
 export default GenericButton;
 
+// nheb composant generic Title =>
+// ta3ml deux button wahed ismou saber
+// button ismou anfel
+// ki teckliqui 3ala saber Composant title <p>saber</p>
+// ki teckliqui 3ala anfel Composant title <p>anfel</p>
