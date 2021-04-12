@@ -19,3 +19,4 @@ const GenericList = (props) => {
     )
 }
 export default GenericList;
+// yarn add axios ==== npm install axios 

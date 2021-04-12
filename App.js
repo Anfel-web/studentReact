@@ -1,10 +1,11 @@
-import React from "react"
+import React from "react";
 import Students from "./components/Students";
 
 function App() {
-return(
-<Students/>
-)
-
-};
+  return (
+    <div>
+      <Students />
+    </div>
+  );
+}
 export default App;
