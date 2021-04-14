@@ -8,8 +8,8 @@ function TestStudents() {
   const [ville, setVille] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-//résumer 
-// get axios.get et url 
+//résumer :
+//get  axios.get et url 
 // lezem tkoun fi useEffect ba3ed me axios yjib data men base n7outha fi state 
 // w fi return naffichi state 
  // add axios.post et url w data eli bch tzidha 

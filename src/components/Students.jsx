@@ -5,8 +5,8 @@ import StudentsTimeTable from "../components/StudentsTimeTable";
 import GenericList from "./GenericList";
 import GenericButton from "./GenericButton";
 import GenericTitle from "./GenericTitle";
-import TestStudents from "./TestStudents";
-
+import TestStudents from "./TestStudents"
+import TestSpeciality from "./TestSpeciality";
 const Students = () => {
     const [buttonAddTitle, setButtonAddTitle] = useState("add student");
     const [name, setName] = useState("");
@@ -80,7 +80,8 @@ const Students = () => {
             <GenericTitle  label={genericTitle}/>
             <button onClick={() => setGenericTitle("saber")}>saber</button>
             <button onClick={() => setGenericTitle("anfel")}>anfel</button>
-            <TestStudents />           
+            <TestStudents /> 
+            <TestSpeciality/>          
         </div >
     )
 }
