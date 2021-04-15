@@ -8,18 +8,18 @@ function TestStudents() {
   const [ville, setVille] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-//résumer :
-//get  axios.get et url 
-// lezem tkoun fi useEffect ba3ed me axios yjib data men base n7outha fi state 
-// w fi return naffichi state 
- // add axios.post et url w data eli bch tzidha 
- // axios.post bch yzid fi base de donnes mel affichage non pourquoi ?
- // 5ater fi useEffect jibna resultat mel base w 7atineha fi state students w affichina state students 
- // donc yekzm ba3ed men najouti fi base lezem nzidou fi state students 5aterha hia affiché
+  //résumer :
+  //get  axios.get et url 
+  // lezem tkoun fi useEffect ba3ed me axios yjib data men base n7outha fi state 
+  // w fi return naffichi state 
+  // add axios.post et url w data eli bch tzidha 
+  // axios.post bch yzid fi base de donnes mel affichage non pourquoi ?
+  // 5ater fi useEffect jibna resultat mel base w 7atineha fi state students w affichina state students 
+  // donc yekzm ba3ed men najouti fi base lezem nzidou fi state students 5aterha hia affiché
 
 
- // delete axios.delete 
- // yzid fi base b axios.delete w ba3ed lezem nfasse5 el element men state bi _id 
+  // delete axios.delete 
+  // yzid fi base b axios.delete w ba3ed lezem nfasse5 el element men state bi _id 
 
 
 
@@ -54,7 +54,7 @@ function TestStudents() {
             newStudent
           );
           console.log("result", result);
-         //  ... spread on va concatener les ancienq elements eli mawjoudin fi state sudents m3a el element eli da5altou
+          //  ... spread on va concatener les ancienq elements eli mawjoudin fi state sudents m3a el element eli da5altou
           setStudents([...students, newStudent])
 
         }}
@@ -62,16 +62,16 @@ function TestStudents() {
         add étudiant
       </button>
       {students.map((student) => (
-        <div style={{ display: "flex "}}>
+        <div style={{ display: "flex " }}>
           <p>{student.name}</p>
           <p>{student.email}</p>
           <p>{student.ville}</p>
           <button onClick={async () => {
-              //
-              await axios.delete(`http://localhost:4000/students/${student._id}`)
-              // filter raja3li lista mte3 student eli id mte3hom differents mel id student eli cliquit bch nsupprimih
-              const studentDelete = students.filter(std => std._id !== student._id)
-              setStudents(studentDelete)
+            //
+            await axios.delete(`http://localhost:4000/students/${student._id}`)
+            // filter raja3li lista mte3 student eli id mte3hom differents mel id student eli cliquit bch nsupprimih
+            const studentDelete = students.filter(std => std._id !== student._id)
+            setStudents(studentDelete)
           }}>delete étudiant</button>
         </div>
       ))}
