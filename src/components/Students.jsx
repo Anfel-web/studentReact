@@ -7,6 +7,7 @@ import GenericButton from "./GenericButton";
 import GenericTitle from "./GenericTitle";
 import TestStudents from "./TestStudents"
 import TestSpeciality from "./TestSpeciality";
+import TestMatier from "./TestMatier";
 const Students = () => {
     const [buttonAddTitle, setButtonAddTitle] = useState("add student");
     const [name, setName] = useState("");
@@ -81,7 +82,8 @@ const Students = () => {
             <button onClick={() => setGenericTitle("saber")}>saber</button>
             <button onClick={() => setGenericTitle("anfel")}>anfel</button>
             <TestStudents /> 
-            <TestSpeciality/>          
+            <TestSpeciality/>
+            <TestMatier/>          
         </div >
     )
 }
