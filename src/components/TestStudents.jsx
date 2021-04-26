@@ -8,14 +8,14 @@ function TestStudents() {
   const [ville, setVille] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //résumer :
-  //get  axios.get et url 
-  // lezem tkoun fi useEffect ba3ed me axios yjib data men base n7outha fi state 
-  // w fi return naffichi state 
-  // add axios.post et url w data eli bch tzidha 
-  // axios.post bch yzid fi base de donnes mel affichage non pourquoi ?
-  // 5ater fi useEffect jibna resultat mel base w 7atineha fi state students w affichina state students 
-  // donc yekzm ba3ed men najouti fi base lezem nzidou fi state students 5aterha hia affiché
+//résumer :
+//get  axios.get et url 
+// lezem tkoun fi useEffect ba3ed me axios yjib data men base n7outha fi state 
+// w fi return naffichi state 
+ // add axios.post et url w data eli bch tzidha 
+ // axios.post bch yzid fi base de donnes mel affichage non pourquoi ?
+ // 5ater fi useEffect jibna resultat mel base w 7atineha fi state students w affichina state students 
+ // donc yekzm ba3ed men najouti fi base lezem nzidou fi state students 5aterha hia affiché
 
 
   // delete axios.delete 
