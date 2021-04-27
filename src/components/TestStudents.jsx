@@ -27,14 +27,22 @@ function TestStudents() {
 
   // useEffect une fonction react sera executé directement apres le rendu de compsant chma3neha
   // ma3neha composant ya3ml return w ba3ed yexecuti eli fi west useEffect
-  useEffect(async () => {
+  // useEffect(async () => {
     // axios tadhreb 3al api w ta3tih url mte3ou eli mawjoudin fi node
     // na3tyouh el methode (get/post/delete/put) w url de l'api 'http://localhost:4000/students'
     // yestena lin tji result mel api w ba3ed yet3eda lili ba3dou
-    const result = await axios.get("http://localhost:4000/students");
+    // const result = await axios.get("http://localhost:4000/students");
+ 
+    // setStudents(result.data.students);
+  // }, []);
 
-    setStudents(result.data.students);
-  }, []);
+  useEffect(() => {
+    (async () => {
+      const result = await axios.get("http://localhost:4000/students");
+
+      setStudents(result.data.students);
+    })();
+}, []);
   console.log("students", students);
   return (
     <div>

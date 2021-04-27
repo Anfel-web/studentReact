@@ -3,9 +3,13 @@ import axios from "axios";
 function TestSpeciality() {
     const [specialities, setSpecialities] = useState([]);
     const [name, setName] = useState("");
-    useEffect(async () => {
-        const result = await axios.get("http://localhost:4000/specialities");
-        setSpecialities(result.data.specialities);
+
+    useEffect(() => {
+        (async () => {
+            const result = await axios.get("http://localhost:4000/specialities");
+    
+          setSpecialities(result.data.specialities);
+        })();
     }, []);
     return (
         <div>

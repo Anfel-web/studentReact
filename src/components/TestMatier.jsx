@@ -5,10 +5,15 @@ function TestMatier() {
     const [name, setName] = useState("");
     const [nombreHours, setNombreHours] = useState(0);
     const [cofficient, setCofficient] = useState(0);
-    useEffect(async () => {
-        const result = await axios.get("http://localhost:4000/matiers");
-        setMatiers(result.data.matiers);
+
+    useEffect(() => {
+        (async () => {
+            const result = await axios.get("http://localhost:4000/matiers");
+    
+            setMatiers(result.data.matiers);
+        })();
     }, []);
+
     return (
         <div>
             name: <input value={name} onChange={(e) => setName(e.target.value)} />
@@ -38,3 +43,4 @@ function TestMatier() {
     );
 }
 export default TestMatier;
+// jawik behi felfoultii heya bye tw 
