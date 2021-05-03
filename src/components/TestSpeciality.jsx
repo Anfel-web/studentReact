@@ -25,6 +25,7 @@ function TestSpeciality() {
                     <p>{specialty.name}</p>
                     <button onClick={async () => {
                         await axios.delete(`http://localhost:4000/specialities/${specialty._id}`)
+                        
                         const specialityDelete = specialities.filter(spe => spe._id !== specialty._id)
                         setSpecialities(specialityDelete)
                     }}>delete specialty</button>

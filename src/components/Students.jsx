@@ -35,7 +35,7 @@ const Students = () => {
     const sommeMoy = students.reduce((moy, studentItem) => moy + studentItem.moyenne, 0);
     const moy = sommeMoy / students.length
     console.log("moy", moy);
-
+    
     return (
         <div>
             <p>STUDENTS APPLICATION</p>
@@ -83,7 +83,9 @@ const Students = () => {
             <button onClick={() => setGenericTitle("anfel")}>anfel</button>
             <TestStudents /> 
             <TestSpeciality/>
-            <TestMatier/>          
+            <TestMatier/>
+            
+
         </div >
     )
 }
