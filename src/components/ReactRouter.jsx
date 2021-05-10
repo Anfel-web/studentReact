@@ -11,7 +11,7 @@ import TestMatier from "./TestMatier";
 import TestSpeciality from "./TestSpeciality";
 
 // deux routes paths urls specoalties matiers yaffichio les composant eli homa déja mawjoudin TestMatier w TestSpeciality
-export default function Routers() {
+export default function Routers(props) {
   return (
     <Router>
       <div>
@@ -39,14 +39,14 @@ export default function Routers() {
             <Students />
           </Route>
           <Route path="/matiers">
-            <TestMatier />
+            <TestMatier matiers={props.matiers} setMatiers={props.setMatiers} />
           </Route>
           <Route path="/specialities">
             <TestSpeciality />
           </Route>
           <Route path="/">
             {/* ki tal9A fi url hetta chay affichi el composant eli mawjoud fi west route  <Home /> */}
-            <Home />
+            <Home matiers={props.matiers}/>
           </Route>
         </Switch>
       </div>
